@@ -1,0 +1,21 @@
+<html>
+	<head>
+    {% block head %}
+		<title> {% block title %}{% endblock %} </title>
+		{% block header %}
+		{% for file in css %}
+		<link rel="stylesheet" href="/_static/{{ file }}.css"/>
+		{% endfor %}
+		{% endblock %}
+	{% endblock %}
+	</head>
+	<body>
+		<a href = "{% block relativeUrl %}{% endblock %}">{% block relativeUrlName %}{% endblock %}</a><br>
+		<a href = "{% block absoluteUrl %}{% endblock %}">{% block absoluteUrlName %}{% endblock %}</a>
+		{% block body %}
+		{% for file in js %}
+		<link rel="stylesheet" href="/_static/{{ file }}.css"/>
+		{% endfor %}
+		{% endblock %}
+	</body>
+</html>
